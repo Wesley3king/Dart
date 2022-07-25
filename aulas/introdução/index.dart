@@ -1,8 +1,8 @@
 void main() {
-  //var nomeCompleto = "king of shadows";
-  //String nomeCompleto = "king of shadows";
-  //Object nomeCompleto = "king of shadows";
-  dynamic nomeCompleto = "king of shadows";
-  nomeCompleto = 1;
-  print(nomeCompleto);
+  // const String valor = " gg jg lixo!";
+  // final String valorFinal = gerar();
+  final lista = ["java", "c#", "c++", ["dart", "flutter"]];
+  print(lista);
 }
+
+String gerar() => "king is back!";
