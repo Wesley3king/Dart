@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 void main(List<String> args) {
   var produto = Produto("king");
 
