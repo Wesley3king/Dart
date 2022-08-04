@@ -18,3 +18,11 @@ void metodo() {}
  * `void main() {}`
  */
 void metodo2() {}
+
+/**
+ * criando pedaços de código nos comentarios
+ * ```
+ * print(object)
+ * ```
+ */
+void metodo3() {}
