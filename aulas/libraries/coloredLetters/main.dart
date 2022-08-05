@@ -1,5 +1,5 @@
 library colored_letters;
-
+/*
 const List<String> cores = [
   '\x1b[29m',
   '\x1b[30m',
@@ -19,27 +19,21 @@ Map<String, int> coresList = {
   "amarelo": 4,
   "azul": 5,
   "roxo": 6,
-};
+};*/
 
-String transform(String value, {List? colors}) {
-  var cor = [];
-  if (colors == null) {
-    // cores = [];
-    cor = [...coresList.values];
-    
-  } else {
-    colors.forEach((element) {
-      coresList.forEach((key, value) {
-        if (element.toString() == key) {
-          cor.add(value);
-        }
-      });
-    });
-  }
-  return colorir(value, cor);
+enum Cores {
+  white('\x1b[29m'),
+  red('\x1b[31m'),
+  green('\x1b[32m'),
+  yellow('\x1b[33m'),
+  blue('\x1b[34m'),
+  purple('\x1b[35m');
+
+  final String value;
+  const Cores(this.value);
 }
 
-String colorir(String value, List lista) {
+String colorir(String value, [List<Cores> lista = const [Cores.white]]) {
   final String valueLetrasMaiusculas = value.toUpperCase();
   final fimCor = '\x1b[m';
   
@@ -47,7 +41,7 @@ String colorir(String value, List lista) {
   StringBuffer stringColored = StringBuffer();
   for (int i = 0; i < valueLetrasMaiusculas.length; ++i) {
     stringColored
-        .write(cores[lista[numTroca]] + valueLetrasMaiusculas[i] + fimCor);
+        .write(lista[numTroca].value + valueLetrasMaiusculas[i] + fimCor);
 
     ++numTroca;
     if (numTroca == lista.length) {
