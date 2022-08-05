@@ -1,5 +1,5 @@
 import 'coloredLetters/main.dart';
 
 void main(List<String> args) {
-  transform("king of shadows");
+  print(transform("king of shadows", colors: [ "vermelho", "azul" ]));
 }
