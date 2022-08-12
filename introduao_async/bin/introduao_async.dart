@@ -16,13 +16,13 @@ Future<void> fetch() async {
 
   var response = await http.get(url);
 
-  print(response.body is Map);
+  print(response.body);
 
   var json = jsonDecode(response.body);
 
   var todo = Todo.fromJson(json);
 
-  print(todo.title);
+  print(json);
 }
 
 class Todo {
@@ -61,7 +61,7 @@ int stringToText(String text) {
     value = int.parse(text);
   } catch (e) {
     value = 0;
-    throw IsNoNumber(text);
+   // throw IsNoNumber(text);
   }
 
   return value;
