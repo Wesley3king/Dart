@@ -5,6 +5,9 @@ import 'package:http/http.dart' as http;
 void main(List<String> arguments) {
   print('--------- iniciou ------');
   fetch();
+
+  var res = stringToText('h');
+  print('$res');
 }
 
 Future<void> fetch() async {
@@ -49,5 +52,27 @@ class Todo {
       "title": title,
       "completed": completed,
     };
+  }
+}
+
+int stringToText(String text) {
+  int value;
+  try {
+    value = int.parse(text);
+  } catch (e) {
+    value = 0;
+    throw IsNoNumber(text);
+  }
+
+  return value;
+}
+
+class IsNoNumber implements Exception {
+  final String valor;
+  IsNoNumber(this.valor) : super();
+
+  @override
+  String toString() {
+    return "o valor ( '$valor' ) não é um number";
   }
 }
