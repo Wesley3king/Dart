@@ -1,12 +1,34 @@
 void main() {
   String url = "king of shadows";
+  String modicaded = "";
   String date = "12/10/2020";
-  url.replaceAll(RegExp(r'([\w+])'), "+");
+  // url.replaceAllMapped(
+  //   RegExp(r'(\w+)', dotAll: true),
+  //   (match) {
+  //     print(match.end);
+  //     //url.replaceRange(4, 5, "+");
+  //     modicaded = '${match.group(0)}+';
+  //     return '"${match.group(0)}"+';
+  //   },
+  // );
+  StringBuffer buffer = StringBuffer();
+  List<String> cortes = url.split(" ");
 
-  print(url.contains(RegExp(r'[ ]')));
+  for (int i = 0; i < cortes.length; ++i) {
+    final String str = cortes[i];
+    if (i == (cortes.length - 1)) {
+      buffer.write('$str');
+    } else {
+      buffer.write('$str+');
+    }
+  } // url.replaceAll(RegExp(r"(\w+?[ ])", dotAll: true), "+",);
 
-  var regex = RegExp(r'\d');
-  var matchs = "";
+  print(url); // contains(RegExp(r'[ ]'))
+  print(buffer);
+  // print(modicaded);
+
+  // var regex = RegExp(r'\d');
+  // var matchs = "";
   // print(date.contains(RegExp('[30]')));
   // dentro de [] indica caracteres separados que serão removidos
 
